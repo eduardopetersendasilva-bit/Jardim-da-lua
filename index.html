@@ -1,42 +1,77 @@
-🌙 Jardim da Lua
-Seu escudo, sua história. Juntas, somos mais fortes.
-
-🚨 BOTÃO DE EMERGÊNCIA
-Toque para enviar sua localização às pessoas de confiança
-
-🔒 Palavra-chave
-Defina uma palavra secreta para acionar o alerta sem precisar falar:
-
-Digite sua palavra...
- Confirmar Palavra
-📍 Mapa de Apoio
-📞 Ligue 190 — Polícia
-Emergência: disque 190 — gratuito
-
-📞 Central de Atendimento à Mulher
-Disque 180 — denúncia e orientação 24h
-
-📞 Delegacia de Maracajá
-R. José Zili, 113 — (48) 99999-1234
-
-📞 CEASA
-R. João Carradore, 450 — (48) 99999-5678
-
-📚 Seus Direitos
-💜 Violência Física
-Tapas, socos, chutes, empurrões ou qualquer ato que cause dano corporal. A lei protege seu corpo e sua integridade.
-
-💜 Violência Psicológica
-Humilhação, ameaças, isolamento, controle de onde vai e com quem fala. Isso também é violência e é crime.
-
-💜 Violência Sexual
-Qualquer ato sexual sem consentimento — ninguém tem o direito de te obrigar a nada. Seu corpo é seu.
-
-💜 Violência Patrimonial
-Quebrar, esconder ou destruir seus objetos, documentos, cartões ou dinheiro. Isso é crime e pode ser denunciado.
-
-🌙 Jardim da Lua — Proteger é um direito. Apoiar é nossa força.
-
-Loba = Coragem | Leoa = Proteção | Coruja = Inteligência
-
-Se você está em perigo, disque 190. Para denúncia e orientação, disque 180
+<!DOCTYPE html>
+ <html lang="pt-BR">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="Jardim da Lua — Seu escudo, sua história. Aplicativo de proteção e apoio à mulher contra a violência. Botão de emergência, localização, mapa de apoio e informações sobre direitos.">
+     <meta name="keywords" content="Jardim da Lua, violência contra a mulher, proteção, emergência, apoio, 180, 190, denúncia, direitos da mulher">
+     <meta name="author" content="Projeto Jardim da Lua">
+     <title>Jardim da Lua — Seu Escudo, Sua História</title>
+     <link rel="stylesheet" href="./style.css">
+ </head>
+ <body>
+     <button id="botaoDiscreto" onclick="modoDiscreto()">⚡</button>
+     <header>
+         <div class="logo">
+             <h1>🌙 Jardim da Lua</h1>
+             <p>Seu escudo, sua história. Juntas, somos mais fortes.</p>
+         </div>
+     </header>
+     <section class="secao-emergencia">
+         <button id="botaoEmergencia" onclick="enviarAlerta()">
+             🚨 BOTÃO DE EMERGÊNCIA
+         </button>
+         <p class="subtexto">Toque para enviar sua localização às pessoas de confiança</p>
+     </section>
+     <section class="secao-palavra">
+         <h2>🔒 Palavra-chave</h2>
+         <p>Defina uma palavra secreta para acionar o alerta sem precisar falar:</p>
+         <input type="text" id="palavraChave" placeholder="Digite sua palavra...">
+         <button onclick="verificarPalavra()">Confirmar Palavra</button>
+     </section>
+     <section class="secao-contatos">
+         <h2>📍 Mapa de Apoio</h2>
+         <div class="cartao-contato">
+             <h3>📞 Ligue 190 — Polícia</h3>
+             <p>Emergência: disque <a href="tel:190">190</a> — gratuito</p>
+         </div>
+         <div class="cartao-contato">
+             <h3>📞 Central de Atendimento à Mulher</h3>
+             <p>Disque <a href="tel:180">180</a> — denúncia e orientação 24h</p>
+         </div>
+         <div class="cartao-contato">
+             <h3>📞 Delegacia de Maracajá</h3>
+             <p>R. José Zili, 113 — (48) 99999-1234</p>
+         </div>
+         <div class="cartao-contato">
+             <h3>📞 CEASA</h3>
+             <p>R. João Carradore, 450 — (48) 99999-5678</p>
+         </div>
+     </section>
+     <section class="secao-info">
+         <h2>📚 Seus Direitos</h2>
+         <div class="info-item">
+             <h3>💜 Violência Física</h3>
+             <p>Tapas, socos, chutes, empurrões ou qualquer ato que cause dano corporal. A lei protege seu corpo e sua integridade.</p>
+         </div>
+         <div class="info-item">
+             <h3>💜 Violência Psicológica</h3>
+             <p>Humilhação, ameaças, isolamento, controle de onde vai e com quem fala. Isso também é violência e é crime.</p>
+         </div>
+         <div class="info-item">
+             <h3>💜 Violência Sexual</h3>
+             <p>Qualquer ato sexual sem consentimento — ninguém tem o direito de te obrigar a nada. Seu corpo é seu.</p>
+         </div>
+         <div class="info-item">
+             <h3>💜 Violência Patrimonial</h3>
+             <p>Quebrar, esconder ou destruir seus objetos, documentos, cartões ou dinheiro. Isso é crime e pode ser denunciado.</p>
+         </div>
+     </section>
+     <footer>
+         <p>🌙 Jardim da Lua — Proteger é um direito. Apoiar é nossa força.</p>
+         <p>Loba = Coragem | Leoa = Proteção | Coruja = Inteligência</p>
+         <p style="font-size: 12px; margin-top: 10px;">Se você está em perigo, disque 190. Para denúncia e orientação, disque 180.</p>
+     </footer>
+     <script src="./script.js"></script>
+ </body>
+ </html>
