@@ -2,112 +2,48 @@
      margin: 0;
      padding: 0;
      box-sizing: border-box;
-     font-family: 'Segoe UI', 'Georgia', sans-serif;
- }
- :root {
-     --roxo-escuro: #2D0C5E;
-     --roxo-profundo: #4B0082;
-     --roxo-medio: #7B2CBF;
-     --roxo-vivo: #9D4EDD;
-     --roxo-claro: #C77DFF;
-     --lilas: #E0AAFF;
-     --creme: #FCF4FF;
-     --dourado: #FFD60A;
-     --branco: #FFFFFF;
-     --sombra-roxa: rgba(75, 0, 130, 0.15);
-     --sombra-forte: rgba(45, 12, 94, 0.25);
- }
- /* === TELA DE ABERTURA === */
- #telaAbertura {
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: linear-gradient(135deg, #2D0C5E 0%, #4B0082 50%, #7B2CBF 100%);
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     z-index: 9999;
-     transition: opacity 0.8s ease, transform 0.8s ease;
- }
- .conteudo-abertura {
-     text-align: center;
-     color: white;
-     animation: aparecer 1.5s ease-out;
- }
- .lua-grande {
-     font-size: 80px;
-     margin-bottom: 20px;
-     animation: flutuar 3s ease-in-out infinite;
-     filter: drop-shadow(0 0 30px rgba(255, 214, 10, 0.5));
- }
- .nome-app {
-     font-size: 36px;
-     font-weight: 700;
-     margin-bottom: 10px;
-     letter-spacing: 2px;
-     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
- }
- .subtitulo-app {
-     font-size: 16px;
-     opacity: 0.85;
-     margin-bottom: 40px;
-     font-weight: 300;
- }
- .carregando {
-     display: flex;
-     justify-content: center;
-     gap: 10px;
- }
- .bolinha {
-     width: 12px;
-     height: 12px;
-     background: white;
-     border-radius: 50%;
-     animation: pular 1.4s ease-in-out infinite;
- }
- .bolinha:nth-child(2) { animation-delay: 0.2s; }
- .bolinha:nth-child(3) { animation-delay: 0.4s; }
- @keyframes aparecer {
-     from { opacity: 0; transform: scale(0.8); }
-     to { opacity: 1; transform: scale(1); }
- }
- @keyframes flutuar {
-     0% { transform: translateY(0); }
-     50% { transform: translateY(-15px); }
-     100% { transform: translateY(0); }
- }
- @keyframes pular {
-     0%, 80%, 100% { transform: translateY(0); }
-     40% { transform: translateY(-15px); }
- }
- #telaAbertura.esconder {
-     opacity: 0;
-     transform: scale(1.1);
-     pointer-events: none;
+     font-family: sans-serif;
  }
  body {
-     background: linear-gradient(135deg, #FCF4FF 0%, #F3E8FF 50%, #EDE9FE 100%);
-     min-height: 100vh;
-     color: var(--roxo-escuro);
-     line-height: 1.7;
-     padding-bottom: 60px;
-     position: relative;
-     overflow-x: hidden;
+     background: #f3e8ff;
+     color: #2d0c5e;
+     padding: 20px;
  }
- body::before {
-     content: '';
-     position: fixed;
-     top: 0;
-     left: 0;
+ header {
+     background: linear-gradient(135deg, #4b0082, #7b2cbf);
+     color: white;
+     padding: 30px;
+     text-align: center;
+     border-radius: 20px;
+     margin-bottom: 30px;
+ }
+ h2 {
+     margin: 25px 0 10px;
+     color: #2d0c5e;
+ }
+ button {
      width: 100%;
-     height: 100%;
-     background-image: 
-         radial-gradient(circle at 10% 20%, rgba(201, 154, 255, 0.15) 0%, transparent 40%),
-         radial-gradient(circle at 90% 80%, rgba(255, 214, 10, 0.08) 0%, transparent 35%);
-     pointer-events: none;
-     z-index: 0;
+     padding: 18px;
+     font-size: 18px;
+     border: none;
+     border-radius: 12px;
+     cursor: pointer;
+     margin: 8px 0;
+ }
+ #botaoEmergencia {
+     background: linear-gradient(135deg, #e53e3e, #c53030);
+     color: white;
+     font-weight: bold;
+     font-size: 22px;
+     margin: 20px 0;
+ }
+ input {
+     width: 100%;
+     padding: 15px;
+     margin: 10px 0;
+     border: 2px solid #c77dff;
+     border-radius: 10px;
+     font-size: 16px;
  }
  #botaoDiscreto {
      position: fixed;
@@ -116,274 +52,8 @@
      width: 44px;
      height: 44px;
      border-radius: 50%;
+     background: #e0aaff;
      border: none;
-     background: linear-gradient(145deg, rgba(123, 44, 191, 0.1), rgba(157, 78, 221, 0.05));
-     color: var(--roxo-medio);
      font-size: 20px;
      cursor: pointer;
-     z-index: 999;
-     backdrop-filter: blur(8px);
-     box-shadow: 0 2px 10px var(--sombra-roxa);
-     transition: all 0.3s ease;
- }
- #botaoDiscreto:hover {
-     transform: scale(1.15);
-     background: linear-gradient(145deg, rgba(123, 44, 191, 0.2), rgba(157, 78, 221, 0.1));
- }
- header {
-     background: linear-gradient(135deg, var(--roxo-escuro) 0%, var(--roxo-profundo) 50%, var(--roxo-medio) 100%);
-     color: white;
-     text-align: center;
-     padding: 50px 25px 60px;
-     position: relative;
-     overflow: hidden;
-     border-bottom-left-radius: 40px;
-     border-bottom-right-radius: 40px;
-     box-shadow: 0 8px 30px var(--sombra-forte);
-     margin-bottom: 20px;
- }
- header::before,
- header::after {
-     content: '';
-     position: absolute;
-     border-radius: 50%;
-     background: radial-gradient(circle, rgba(255, 255, 255, 0.15), transparent 70%);
- }
- header::before {
-     width: 200px;
-     height: 200px;
-     top: -80px;
-     right: 30px;
- }
- header::after {
-     width: 150px;
-     height: 150px;
-     bottom: -50px;
-     left: 20px;
-     background: radial-gradient(circle, rgba(255, 214, 10, 0.15), transparent 70%);
- }
- .logo {
-     position: relative;
-     z-index: 1;
- }
- header h1 {
-     font-size: 32px;
-     font-weight: 700;
-     margin-bottom: 10px;
-     letter-spacing: 1px;
-     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
- }
- header p {
-     font-size: 17px;
-     opacity: 0.9;
-     font-weight: 300;
-     max-width: 400px;
-     margin: 0 auto;
- }
- section {
-     max-width: 620px;
-     margin: 35px auto;
-     padding: 0 22px;
-     position: relative;
-     z-index: 1;
- }
- h2 {
-     color: var(--roxo-escuro);
-     font-size: 22px;
-     font-weight: 600;
-     margin-bottom: 20px;
-     display: flex;
-     align-items: center;
-     gap: 10px;
- }
- h2::after {
-     content: '';
-     flex: 1;
-     height: 2px;
-     background: linear-gradient(90deg, var(--roxo-claro), transparent);
-     margin-left: 15px;
-     border-radius: 2px;
- }
- .secao-emergencia {
-     text-align: center;
-     margin-top: 25px;
- }
- #botaoEmergencia {
-     background: linear-gradient(135deg, #E53E3E 0%, #C53030 100%);
-     color: white;
-     border: none;
-     font-size: 22px;
-     font-weight: 700;
-     padding: 28px 45px;
-     border-radius: 50px;
-     cursor: pointer;
-     width: 100%;
-     max-width: 420px;
-     box-shadow: 
-         0 6px 25px rgba(229, 62, 62, 0.4),
-         inset 0 2px 0 rgba(255, 255, 255, 0.2);
-     transition: all 0.2s ease;
-     position: relative;
-     overflow: hidden;
- }
- #botaoEmergencia::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: -100%;
-     width: 100%;
-     height: 100%;
-     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-     transition: left 0.5s ease;
- }
- #botaoEmergencia:active {
-     transform: scale(0.96);
-     box-shadow: 
-         0 3px 12px rgba(229, 62, 62, 0.35),
-         inset 0 2px 4px rgba(0, 0, 0, 0.2);
- }
- .subtexto {
-     margin-top: 15px;
-     color: #6B7280;
-     font-size: 14px;
-     font-style: italic;
- }
- .secao-palavra {
-     background: var(--branco);
-     padding: 28px;
-     border-radius: 20px;
-     box-shadow: 
-         0 4px 20px var(--sombra-roxa),
-         0 0 0 1px rgba(123, 44, 191, 0.05);
-     position: relative;
- }
- .secao-palavra input {
-     width: 100%;
-     padding: 15px 18px;
-     margin: 12px 0;
-     border: 2px solid var(--lilas);
-     border-radius: 12px;
-     font-size: 16px;
-     background: var(--creme);
-     transition: all 0.3s ease;
-     outline: none;
- }
- .secao-palavra input:focus {
-     border-color: var(--roxo-vivo);
-     box-shadow: 0 0 0 4px rgba(157, 78, 221, 0.15);
-     background: white;
- }
- .secao-palavra button {
-     background: linear-gradient(135deg, var(--roxo-medio) 0%, var(--roxo-vivo) 100%);
-     color: white;
-     border: none;
-     padding: 13px 28px;
-     border-radius: 12px;
-     font-size: 15px;
-     font-weight: 600;
-     cursor: pointer;
-     transition: all 0.3s ease;
-     box-shadow: 0 2px 8px rgba(123, 44, 191, 0.25);
- }
- .secao-palavra button:hover {
-     transform: translateY(-2px);
-     box-shadow: 0 4px 15px rgba(123, 44, 191, 0.35);
- }
- .cartao-contato {
-     background: var(--branco);
-     padding: 22px;
-     margin-bottom: 14px;
-     border-radius: 16px;
-     box-shadow: 
-         0 3px 12px var(--sombra-roxa),
-         0 0 0 1px rgba(123, 44, 191, 0.05);
-     transition: transform 0.3s ease, box-shadow 0.3s ease;
- }
- .cartao-contato:hover {
-     transform: translateY(-3px);
-     box-shadow: 
-         0 6px 20px var(--sombra-roxa),
-         0 0 0 1px rgba(123, 44, 191, 0.08);
- }
- .cartao-contato h3 {
-     font-size: 17px;
-     color: var(--roxo-escuro);
-     margin-bottom: 6px;
-     font-weight: 600;
- }
- .cartao-contato p {
-     font-size: 14px;
-     color: #555;
- }
- .cartao-contato a {
-     color: var(--roxo-medio);
-     font-weight: 600;
-     text-decoration: none;
-     display: inline-flex;
-     align-items: center;
-     gap: 4px;
- }
- .info-item {
-     background: var(--branco);
-     padding: 22px;
-     margin-bottom: 14px;
-     border-radius: 16px;
-     border-left: 5px solid var(--roxo-vivo);
-     box-shadow: 
-         0 3px 12px var(--sombra-roxa),
-         0 0 0 1px rgba(123, 44, 191, 0.05);
-     transition: transform 0.3s ease;
- }
- .info-item:hover {
-     transform: translateX(5px);
- }
- .info-item h3 {
-     font-size: 16px;
-     margin-bottom: 8px;
-     color: var(--roxo-escuro);
-     font-weight: 600;
- }
- .info-item p {
-     font-size: 14px;
-     color: #555;
-     line-height: 1.6;
- }
- footer {
-     text-align: center;
-     padding: 35px 25px;
-     background: linear-gradient(135deg, rgba(123, 44, 191, 0.08) 0%, rgba(157, 78, 221, 0.05) 100%);
-     margin-top: 50px;
-     border-top: 1px solid var(--lilas);
-     position: relative;
-     z-index: 1;
- }
- footer p {
-     font-size: 14px;
-     color: var(--roxo-escuro);
-     margin-bottom: 6px;
- }
- footer p:last-child {
-     font-size: 13px;
-     opacity: 0.7;
-     margin-top: 10px;
- }
- @media (max-width: 480px) {
-     header {
-         padding: 35px 20px 45px;
-         border-bottom-left-radius: 30px;
-         border-bottom-right-radius: 30px;
-     }
-     
-     header h1 {
-         font-size: 26px;
-     }
-     
-     #botaoEmergencia {
-         font-size: 20px;
-         padding: 24px 35px;
-     }
-     
-     section {
-         margin: 25px auto;
-     }
  }
