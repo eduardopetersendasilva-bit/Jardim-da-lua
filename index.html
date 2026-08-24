@@ -3,14 +3,32 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="description" content="Jardim da Lua — Seu escudo, sua história. Aplicativo de proteção e apoio à mulher contra a violência. Botão de emergência, localização, mapa de apoio e informações sobre direitos.">
-     <meta name="keywords" content="Jardim da Lua, violência contra a mulher, proteção, emergência, apoio, 180, 190, denúncia, direitos da mulher">
-     <meta name="author" content="Projeto Jardim da Lua">
-     <title>Jardim da Lua — Seu Escudo, Sua História</title>
-     
-     <!-- Ícone personalizado -->
-     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234B0082'/><path d='M70,15 A35,35 0 1,1 50,85 A25,25 0 1,0 70,15 z' fill='%23C77DFF'/></svg>">
-     <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><circle cx='96' cy='96' r='88' fill='%234B0082'/><path d='M135,25 A75,75 0 1,1 95,165 A55,55 0 1,0 135,25 z' fill='%23C77DFF'/></svg>">
-     <link rel="manifest" href="data:application/manifest+json,%7B%22name%22%3A%22Jardim%20da%20Lua%22%2C%22short_name%22%3A%22Jardim%20da%20Lua%22%2C%22description%22%3A%22Seu%20escudo%2C%20sua%20hist%C3%B3ria%22%2C%22theme_color%22%3A%22%234B0082%22%2C%22background_color%22%3A%22%23FCF4FF%22%2C%22display%22%3A%22standalone%22%7D">
-     <meta name="theme-color" content="#4B0082">
-     <
+     <title>Jardim da Lua</title>
+     <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+ <button id="botaoDiscreto" onclick="modoDiscreto()">⚡</button>
+ <header>
+     <h1>🌙 Jardim da Lua</h1>
+     <p>Seu escudo, sua história. Juntas, somos mais fortes.</p>
+ </header>
+ <section>
+     <button id="botaoEmergencia" onclick="enviarAlerta()">
+         🚨 BOTÃO DE EMERGÊNCIA
+     </button>
+     <p>Toque para enviar sua localização às pessoas de confiança</p>
+ </section>
+ <section>
+     <h2>🔒 Palavra-chave</h2>
+     <p>Defina uma palavra secreta para acionar o alerta:</p>
+     <input type="text" id="palavraChave" placeholder="Digite sua palavra...">
+     <button onclick="verificarPalavra()">Confirmar Palavra</button>
+ </section>
+ <section>
+     <h2>📍 Contatos de Apoio</h2>
+     <p><strong>190 — Polícia</strong> (Emergência)</p>
+     <p><strong>180 — Central da Mulher</strong> (Denúncia 24h)</p>
+ </section>
+ <script src="script.js"></script>
+ </body>
+ </html>
