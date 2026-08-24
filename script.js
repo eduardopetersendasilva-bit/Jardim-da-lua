@@ -1,4 +1,13 @@
-function enviarAlerta() {
+// Esconde a tela de abertura depois de um tempo
+ window.addEventListener('load', function() {
+     setTimeout(function() {
+         const tela = document.getElementById('telaAbertura');
+         if (tela) {
+             tela.classList.add('esconder');
+         }
+     }, 2500);
+ });
+ function enviarAlerta() {
      if (!navigator.geolocation) {
          alert("❌ Seu navegador não suporta localização.");
          return;
