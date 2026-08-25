@@ -3,32 +3,28 @@
  <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Jardim da Lua</title>
+     <title>Jardim da Lua 🌙</title>
      <link rel="stylesheet" href="style.css">
  </head>
  <body>
- <button id="botaoDiscreto" onclick="modoDiscreto()">⚡</button>
  <header>
      <h1>🌙 Jardim da Lua</h1>
-     <p>Seu escudo, sua história. Juntas, somos mais fortes.</p>
+     <button onclick="modoDiscreto()" class="btn-discreto">🔒</button>
  </header>
- <section>
-     <button id="botaoEmergencia" onclick="enviarAlerta()">
-         🚨 BOTÃO DE EMERGÊNCIA
-     </button>
-     <p>Toque para enviar sua localização às pessoas de confiança</p>
- </section>
- <section>
-     <h2>🔒 Palavra-chave</h2>
-     <p>Defina uma palavra secreta para acionar o alerta:</p>
-     <input type="text" id="palavraChave" placeholder="Digite sua palavra...">
-     <button onclick="verificarPalavra()">Confirmar Palavra</button>
- </section>
- <section>
-     <h2>📍 Contatos de Apoio</h2>
-     <p><strong>190 — Polícia</strong> (Emergência)</p>
-     <p><strong>180 — Central da Mulher</strong> (Denúncia 24h)</p>
- </section>
+ <main>
+     <section class="alerta">
+         <h2>🚨 Botão de Emergência</h2>
+         <button onclick="enviarAlerta()" id="btnAlerta">ENVIAR ALERTA</button>
+     </section>
+     <section class="palavra">
+         <h2>🔑 Palavra-chave</h2>
+         <input type="text" id="palavraChave" placeholder="Digite a palavra...">
+         <button onclick="verificarPalavra()">Confirmar</button>
+     </section>
+ </main>
+ <!-- Firebase — NÃO MEXER AQUI! -->
+ <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
  <script src="script.js"></script>
  </body>
  </html>
