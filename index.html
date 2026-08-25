@@ -5,24 +5,110 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Jardim da Lua 🌙</title>
      <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  </head>
  <body>
- <header>
-     <h1>🌙 Jardim da Lua</h1>
-     <button onclick="modoDiscreto()" class="btn-discreto">🔒</button>
- </header>
- <main>
-     <section class="alerta">
-         <h2>🚨 Botão de Emergência</h2>
-         <button onclick="enviarAlerta()" id="btnAlerta">ENVIAR ALERTA</button>
-     </section>
-     <section class="palavra">
-         <h2>🔑 Palavra-chave</h2>
-         <input type="text" id="palavraChave" placeholder="Digite a palavra...">
-         <button onclick="verificarPalavra()">Confirmar</button>
-     </section>
- </main>
- <!-- Firebase — NÃO MEXER AQUI! -->
+ <!-- Tela de Carregamento -->
+ <div id="telaCarregamento">
+     <div class="lua-carregamento"></div>
+     <p>Carregando...</p>
+ </div>
+ <!-- Tela Inicial -->
+ <div id="telaInicial" class="tela ativa">
+     <header>
+         <div class="logo">
+             <span class="lua-grande">🌙</span>
+             <h1>Jardim da Lua</h1>
+         </div>
+         <button onclick="modoDiscreto()" class="btn-discreto" title="Modo Discreto">
+             <i class="fas fa-eye-slash"></i>
+         </button>
+     </header>
+     <main>
+         <!-- Seção Alerta -->
+         <section class="card alerta-card">
+             <div class="icone-circulo">
+                 <i class="fas fa-exclamation-triangle"></i>
+             </div>
+             <h2>Alerta de Emergência</h2>
+             <p>Envia sua localização exata para contatos de confiança</p>
+             <button onclick="confirmarAlerta()" id="btnAlerta">
+                 <i class="fas fa-paper-plane"></i> ENVIAR ALERTA
+             </button>
+         </section>
+         <!-- Seção Palavra-chave -->
+         <section class="card palavra-card">
+             <div class="icone-circulo">
+                 <i class="fas fa-key"></i>
+             </div>
+             <h2>Palavra Secreta</h2>
+             <p>Confirme a palavra de segurança para acessar funções extras</p>
+             <input type="password" id="palavraChave" placeholder="Digite a palavra...">
+             <button onclick="verificarPalavra()">
+                 <i class="fas fa-check"></i> Confirmar
+             </button>
+         </section>
+         <!-- Contatos Rápidos -->
+         <section class="card contatos-card">
+             <h3><i class="fas fa-phone-alt"></i> Contatos Rápidos</h3>
+             <div class="botoes-contato">
+                 <button onclick="ligarContato('190')" class="btn-policia">
+                     <i class="fas fa-shield-alt"></i> 190 - Polícia
+                 </button>
+                 <button onclick="ligarContato('192')" class="btn-samu">
+                     <i class="fas fa-ambulance"></i> 192 - Samu
+                 </button>
+                 <button onclick="abrirWhatsApp()" class="btn-whatsapp">
+                     <i class="fab fa-whatsapp"></i> WhatsApp
+                 </button>
+             </div>
+         </section>
+         <!-- Informações -->
+         <section class="card info-card">
+             <p><i class="fas fa-map-marker-alt"></i> Sua localização é capturada automaticamente</p>
+             <p><i class="fas fa-lock"></i> Seus dados ficam protegidos</p>
+         </section>
+     </main>
+     <footer>
+         <p>🌙 Jardim da Lua • Segurança e Paz</p>
+     </footer>
+ </div>
+ <!-- Tela Calculadora (Modo Discreto) -->
+ <div id="telaCalculadora" class="tela">
+     <div class="calculadora">
+         <div class="cabecalho-calc">
+             <span>Calculadora</span>
+             <button onclick="sairModoDiscreto()" class="btn-sair">✕</button>
+         </div>
+         <input type="text" id="visorCalc" readonly>
+         <div class="botoes-calc">
+             <button onclick="limparCalc()">C</button>
+             <button onclick="adicionarVisor('(')">(</button>
+             <button onclick="adicionarVisor(')')">)</button>
+             <button onclick="adicionarVisor('/')">÷</button>
+             
+             <button onclick="adicionarVisor('7')">7</button>
+             <button onclick="adicionarVisor('8')">8</button>
+             <button onclick="adicionarVisor('9')">9</button>
+             <button onclick="adicionarVisor('*')">×</button>
+             
+             <button onclick="adicionarVisor('4')">4</button>
+             <button onclick="adicionarVisor('5')">5</button>
+             <button onclick="adicionarVisor('6')">6</button>
+             <button onclick="adicionarVisor('-')">-</button>
+             
+             <button onclick="adicionarVisor('1')">1</button>
+             <button onclick="adicionarVisor('2')">2</button>
+             <button onclick="adicionarVisor('3')">3</button>
+             <button onclick="adicionarVisor('+')">+</button>
+             
+             <button onclick="adicionarVisor('0')" class="btn-zero">0</button>
+             <button onclick="adicionarVisor('.')">.</button>
+             <button onclick="calcularResultado()" class="btn-igual">=</button>
+         </div>
+     </div>
+ </div>
+ <!-- Firebase -->
  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
  <script src="script.js"></script>
