@@ -5,55 +5,80 @@
      font-family: sans-serif;
  }
  body {
-     background: #f3e8ff;
-     color: #2d0c5e;
+     background: linear-gradient(135deg, #1a1a2e, #16213e);
+     color: white;
+     min-height: 100vh;
      padding: 20px;
  }
  header {
-     background: linear-gradient(135deg, #4b0082, #7b2cbf);
-     color: white;
-     padding: 30px;
-     text-align: center;
-     border-radius: 20px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px;
+     background: rgba(255,255,255,0.1);
+     border-radius: 15px;
      margin-bottom: 30px;
  }
+ header h1 {
+     font-size: 24px;
+ }
+ .btn-discreto {
+     background: transparent;
+     border: none;
+     font-size: 24px;
+     cursor: pointer;
+ }
+ main {
+     max-width: 500px;
+     margin: 0 auto;
+ }
+ section {
+     background: rgba(255,255,255,0.1);
+     padding: 30px;
+     border-radius: 20px;
+     margin-bottom: 25px;
+ }
  h2 {
-     margin: 25px 0 10px;
-     color: #2d0c5e;
+     text-align: center;
+     margin-bottom: 20px;
+     font-size: 20px;
  }
  button {
      width: 100%;
      padding: 18px;
-     font-size: 18px;
+     font-size: 20px;
      border: none;
      border-radius: 12px;
      cursor: pointer;
-     margin: 8px 0;
- }
- #botaoEmergencia {
-     background: linear-gradient(135deg, #e53e3e, #c53030);
-     color: white;
      font-weight: bold;
-     font-size: 22px;
-     margin: 20px 0;
+     transition: 0.3s;
+ }
+ #btnAlerta {
+     background: #e74c3c;
+     color: white;
+ }
+ #btnAlerta:active {
+     transform: scale(0.95);
+     background: #c0392b;
  }
  input {
      width: 100%;
      padding: 15px;
-     margin: 10px 0;
-     border: 2px solid #c77dff;
+     font-size: 18px;
      border-radius: 10px;
-     font-size: 16px;
- }
- #botaoDiscreto {
-     position: fixed;
-     top: 15px;
-     right: 15px;
-     width: 44px;
-     height: 44px;
-     border-radius: 50%;
-     background: #e0aaff;
      border: none;
-     font-size: 20px;
-     cursor: pointer;
+     margin-bottom: 15px;
+     background: rgba(255,255,255,0.2);
+     color: white;
+     text-align: center;
+ }
+ input::placeholder {
+     color: #ccc;
+ }
+ section button {
+     background: #9b59b6;
+     color: white;
+ }
+ section button:active {
+     background: #8e44ad;
  }
